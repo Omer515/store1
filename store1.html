@@ -85,11 +85,11 @@
             background: rgba(26, 31, 46, 0.98);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(0, 136, 204, 0.2);
-            padding: 6px 0;
+            padding: 8px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
         }
 
         .nav-container {
@@ -99,46 +99,50 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 50px;
+            height: 60px;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .logo-icon {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             background: var(--gradient-2);
-            border-radius: 6px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
         }
 
         .logo-text h1 {
-            font-size: 15px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             color: var(--text-primary);
+            letter-spacing: -0.5px;
         }
 
         .logo-text p {
-            display: none;
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: -2px;
         }
 
         /* Hero Section */
         .hero {
-            padding: 100px 30px 80px;
+            padding: 60px 30px 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
@@ -147,14 +151,15 @@
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(0, 136, 204, 0.1);
+            gap: 10px;
+            background: rgba(0, 136, 204, 0.15);
             border: 1px solid var(--primary-blue);
-            padding: 8px 20px;
+            padding: 10px 24px;
             border-radius: 30px;
-            font-size: 14px;
+            font-size: 15px;
+            font-weight: 600;
             color: var(--accent-blue);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             animation: fadeInDown 1s ease;
         }
 
@@ -164,14 +169,36 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.2;
             background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
             -webkit-background-clip: text;
@@ -191,37 +218,36 @@
         }
 
         .hero-subtitle {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--text-secondary);
-            margin-bottom: 40px;
-            line-height: 1.6;
+            margin-bottom: 45px;
+            line-height: 1.7;
             animation: fadeInUp 1.2s ease;
         }
 
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            margin-top: 50px;
+            gap: 70px;
+            margin-top: 60px;
             flex-wrap: wrap;
             animation: fadeInUp 1.4s ease;
         }
 
         .stat-card {
             text-align: center;
-            padding: 20px;
-            background: rgba(26, 31, 46, 0.6);
-            backdrop-filter: blur(10px);
+            padding: 25px 35px;
+            background: rgba(26, 31, 46, 0.7);
+            backdrop-filter: blur(15px);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            min-width: 160px;
+            border-radius: 15px;
             transition: all 0.3s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--primary-blue);
-            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.2);
         }
 
         .stat-number {
@@ -232,75 +258,53 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            font-size: 15px;
             color: var(--text-secondary);
-            font-weight: 600;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            font-size: 15px;
+            font-weight: 500;
         }
 
         /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 30px 60px;
+            padding: 0 25px;
         }
 
-        /* Section */
+        /* Section Styles */
         .section {
-            margin-bottom: 80px;
+            padding: 80px 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-badge {
             display: inline-block;
-            background: rgba(0, 136, 204, 0.1);
+            background: rgba(0, 136, 204, 0.15);
             color: var(--accent-blue);
-            padding: 6px 16px;
+            padding: 8px 20px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border: 1px solid var(--primary-blue);
         }
 
         .section-title {
-            font-size: 36px;
-            font-weight: 800;
+            font-size: 42px;
+            font-weight: 900;
             margin-bottom: 15px;
             color: var(--text-primary);
         }
 
         .section-subtitle {
-            font-size: 17px;
+            font-size: 18px;
             color: var(--text-secondary);
             max-width: 700px;
             margin: 0 auto;
@@ -311,20 +315,41 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
+            margin-top: 50px;
         }
 
         .service-card {
-            background: var(--card-bg);
+            background: rgba(26, 31, 46, 0.8);
+            backdrop-filter: blur(15px);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 35px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-2);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
             border-color: var(--primary-blue);
-            box-shadow: 0 20px 50px rgba(0, 136, 204, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 136, 204, 0.25);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.05;
         }
 
         .service-header {
@@ -335,70 +360,49 @@
         }
 
         .service-icon {
-            width: 70px;
-            height: 70px;
-            min-width: 70px;
-            min-height: 70px;
+            width: 60px;
+            height: 60px;
             background: var(--gradient-2);
-            border-radius: 16px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 10px 30px rgba(0, 136, 204, 0.4);
+            font-size: 28px;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.05);
-        }
-
-        .service-title-group {
-            flex: 1;
-            min-width: 0;
-            padding-top: 5px;
+            box-shadow: 0 5px 20px rgba(0, 136, 204, 0.3);
         }
 
         .service-title-group h3 {
             font-size: 22px;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 5px;
             color: var(--text-primary);
-            line-height: 1.3;
         }
 
         .service-title-group p {
             font-size: 14px;
             color: var(--text-secondary);
-            line-height: 1.4;
         }
 
         .service-description {
             color: var(--text-secondary);
-            font-size: 16px;
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 25px;
+            font-size: 15px;
         }
 
         .service-features {
             list-style: none;
-            margin: 0;
-            padding: 0;
+            margin-bottom: 30px;
         }
 
         .service-features li {
+            padding: 12px 0;
+            color: var(--text-secondary);
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 10px 0;
-            color: var(--text-secondary);
             font-size: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .service-features li:last-child {
-            border-bottom: none;
         }
 
         .service-features li i {
@@ -409,199 +413,183 @@
         .service-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            color: var(--accent-blue);
-            font-weight: 600;
-            font-size: 14px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
+            gap: 10px;
+            background: var(--gradient-2);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 10px;
             text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 136, 204, 0.3);
         }
 
         .service-link:hover {
-            gap: 12px;
-            color: var(--light-blue);
+            transform: translateX(-5px);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
         }
 
-        /* Features Section */
+        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 30px;
+            margin-top: 50px;
         }
 
         .feature-card {
-            background: var(--card-bg);
+            background: rgba(26, 31, 46, 0.8);
+            backdrop-filter: blur(15px);
             border: 1px solid var(--border-color);
             border-radius: 20px;
-            padding: 35px;
+            padding: 40px 30px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             border-color: var(--primary-blue);
-            box-shadow: 0 15px 40px rgba(0, 136, 204, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 136, 204, 0.25);
         }
 
         .feature-icon {
-            width: 90px;
-            height: 90px;
-            background: rgba(0, 136, 204, 0.1);
-            border: 2px solid var(--primary-blue);
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 25px;
-            font-size: 40px;
-            color: var(--accent-blue);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            background: var(--gradient-2);
-            color: white;
-            border-color: transparent;
+            font-size: 36px;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
         }
 
         .feature-card h4 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
             color: var(--text-primary);
         }
 
         .feature-card p {
             color: var(--text-secondary);
+            line-height: 1.8;
             font-size: 15px;
-            line-height: 1.6;
         }
 
         /* CTA Section */
         .cta-section {
-            background: var(--gradient-2);
-            border-radius: 30px;
-            padding: 70px 50px;
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            padding: 80px 40px;
             text-align: center;
+            margin: 80px auto;
+            max-width: 1100px;
             position: relative;
             overflow: hidden;
-            margin-top: 80px;
         }
 
         .cta-section::before {
             content: '';
             position: absolute;
             top: -50%;
-            right: -50%;
+            left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate-slow 30s linear infinite;
+            background: radial-gradient(circle, rgba(0, 136, 204, 0.1) 0%, transparent 50%);
+            animation: rotate-gradient 20s linear infinite;
         }
 
-        @keyframes rotate-slow {
+        @keyframes rotate-gradient {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
 
         .cta-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        .cta-section h2 {
-            font-size: 38px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: white;
+        .cta-content h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .cta-section p {
-            font-size: 18px;
-            margin-bottom: 35px;
-            color: rgba(255, 255, 255, 0.9);
+        .cta-content p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
         }
 
         .cta-buttons {
             display: flex;
-            justify-content: center;
             gap: 20px;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
         .cta-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 14px 32px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
+            gap: 12px;
+            padding: 18px 40px;
+            border-radius: 12px;
             text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
         }
 
         .cta-btn-primary {
-            background: white;
-            color: var(--primary-blue);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background: var(--gradient-2);
+            color: white;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
         }
 
         .cta-btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 136, 204, 0.4);
         }
 
         .cta-btn-outline {
             background: transparent;
-            color: white;
-            border-color: white;
+            color: var(--text-primary);
+            border: 2px solid var(--primary-blue);
         }
 
         .cta-btn-outline:hover {
-            background: white;
-            color: var(--primary-blue);
+            background: var(--primary-blue);
+            transform: translateY(-5px);
         }
 
         /* Footer */
         .footer {
-            background: var(--secondary-bg);
+            background: rgba(15, 20, 25, 0.95);
             border-top: 1px solid var(--border-color);
-            padding: 70px 30px 30px;
-            margin-top: 100px;
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-2);
+            padding: 60px 0 30px;
+            margin-top: 80px;
         }
 
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 25px;
         }
 
         .footer-main {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
             gap: 50px;
             margin-bottom: 50px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .footer-about {
-            padding-left: 20px;
         }
 
         .footer-brand {
@@ -615,7 +603,7 @@
             width: 50px;
             height: 50px;
             background: var(--gradient-2);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -623,74 +611,45 @@
         }
 
         .footer-brand h3 {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 800;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .footer-about p {
             color: var(--text-secondary);
-            font-size: 15px;
             line-height: 1.8;
             margin-bottom: 25px;
+            font-size: 15px;
         }
 
         .footer-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            display: flex;
+            gap: 30px;
             margin-top: 25px;
         }
 
         .footer-stat {
-            text-align: center;
-            padding: 15px;
-            background: rgba(0, 136, 204, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .footer-stat:hover {
-            background: rgba(0, 136, 204, 0.1);
-            border-color: var(--primary-blue);
-            transform: translateY(-2px);
+            display: flex;
+            flex-direction: column;
         }
 
         .footer-stat-number {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--accent-blue);
-            display: block;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary-blue);
         }
 
         .footer-stat-label {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-secondary);
-            margin-top: 3px;
+            margin-top: 5px;
         }
 
         .footer-section h4 {
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 20px;
             color: var(--text-primary);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-section h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient-2);
-            border-radius: 2px;
         }
 
         .footer-links {
@@ -698,36 +657,30 @@
         }
 
         .footer-links li {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
             color: var(--text-secondary);
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 15px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-size: 15px;
         }
 
         .footer-links a:hover {
-            color: var(--accent-blue);
-            padding-right: 5px;
+            color: var(--primary-blue);
+            transform: translateX(-5px);
         }
 
         .footer-links a i {
             font-size: 12px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-links a:hover i {
-            opacity: 1;
         }
 
         .footer-contact {
-            margin-top: 20px;
+            margin-bottom: 25px;
         }
 
         .contact-item {
@@ -736,48 +689,50 @@
             gap: 12px;
             margin-bottom: 15px;
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 15px;
         }
 
         .contact-item i {
-            width: 36px;
-            height: 36px;
-            background: rgba(0, 136, 204, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-blue);
-            font-size: 16px;
+            color: var(--primary-blue);
+            font-size: 18px;
+            width: 25px;
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-blue);
         }
 
         .social-links {
             display: flex;
             gap: 12px;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .social-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(0, 136, 204, 0.1);
-            border: 1px solid var(--primary-blue);
-            border-radius: 12px;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent-blue);
-            font-size: 18px;
+            color: var(--text-secondary);
             text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 18px;
         }
 
         .social-icon:hover {
-            background: var(--gradient-2);
+            background: var(--primary-blue);
             color: white;
-            transform: translateY(-3px);
-            border-color: transparent;
-            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.3);
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
         }
 
         .footer-bottom {
@@ -785,53 +740,138 @@
             justify-content: space-between;
             align-items: center;
             padding-top: 30px;
+            border-top: 1px solid var(--border-color);
             flex-wrap: wrap;
             gap: 20px;
         }
 
-        .footer-copyright {
+        .footer-copyright p {
             color: var(--text-secondary);
             font-size: 14px;
         }
 
         .footer-copyright strong {
-            color: var(--accent-blue);
-            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* Payment Methods Section */
+        .footer-payment-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .payment-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+            text-align: center;
         }
 
         .footer-payment {
             display: flex;
-            gap: 12px;
             align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .payment-icon {
-            width: 50px;
-            height: 32px;
+        .payment-method {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
+            padding: 8px 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 20px;
+            gap: 8px;
             transition: all 0.3s ease;
+            cursor: default;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
 
-        .payment-icon:hover {
-            background: rgba(255, 255, 255, 0.1);
+        .payment-method:hover {
+            background: rgba(255, 255, 255, 0.08);
             border-color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .payment-logo {
+            height: 24px;
+            width: auto;
+            object-fit: contain;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+
+        .payment-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            user-select: none;
+        }
+
+        /* إزالة التحديد الأزرق من جميع العناصر */
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            outline: none !important;
+        }
+
+        *:focus {
+            outline: none !important;
+        }
+
+        a, button, input, textarea, select {
+            -webkit-tap-highlight-color: transparent;
+            outline: none !important;
+        }
+
+        a:focus, button:focus, input:focus, textarea:focus, select:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        /* منع التحديد على الصور والأيقونات */
+        img, svg, i {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+
+        /* السماح بالنقر على الروابط والأزرار */
+        a, button, .service-link, .cta-btn {
+            pointer-events: auto;
+        }
+
+        a *, button *, .service-link *, .cta-btn * {
+            pointer-events: none;
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-
+        @media (max-width: 1200px) {
             .footer-main {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -845,35 +885,28 @@
             }
 
             .hero-stats {
-                gap: 30px;
+                gap: 40px;
+            }
+
+            .stat-number {
+                font-size: 32px;
             }
 
             .section-title {
                 font-size: 32px;
             }
 
-            .services-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
 
-            .cta-section {
-                padding: 50px 30px;
-            }
-
-            .cta-section h2 {
-                font-size: 32px;
-            }
-
-            /* Removed .nav-buttons styling as it is deleted */
-
             .footer-main {
                 grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-stats {
-                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
             }
 
             .footer-bottom {
@@ -881,21 +914,53 @@
                 text-align: center;
             }
 
-            .footer-payment {
-                justify-content: center;
+            .footer-payment-section {
+                width: 100%;
+            }
+
+            .payment-title {
+                font-size: 15px;
+            }
+
+            .cta-content h2 {
+                font-size: 32px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .nav-container {
+                height: auto;
+                padding: 10px 20px;
+            }
+
+            .logo-text p {
+                font-size: 10px;
             }
         }
 
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 20px 60px;
+            }
 
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+
+            .footer-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -909,42 +974,38 @@
                     <i class="fas fa-rocket"></i>
                 </div>
                 <div class="logo-text">
-                    <h1>خدمات السوشيال ميديا</h1>
-                    <p>الحل الاحترافي الشامل</p>
+                    <h1>Social Media Pro</h1>
+                    <p>خدمات احترافية متميزة</p>
                 </div>
             </div>
-            </div>
+        </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">
-                <i class="fas fa-circle"></i>
-                متاح الآن - خدمة على مدار الساعة
+                <i class="fas fa-shield-check"></i>
+                موثوق من أكثر من 10,000 عميل
             </div>
-            
             <h1>
-                خدمات السوشيال ميديا الاحترافية 
-                <span class="emoji">🚀</span>
+                أفضل خدمات السوشيال ميديا <span class="emoji">🚀</span>
             </h1>
-            
             <p class="hero-subtitle">
-                نوفر لك جميع الخدمات التي تحتاجها لتطوير حضورك الرقمي<br>
-                بجودة عالية وأسعار تنافسية
+                نقدم لك خدمات احترافية لتعزيز حضورك الرقمي وزيادة متابعيك وتفاعلك على جميع منصات التواصل الاجتماعي بأعلى جودة وأفضل الأسعار
             </p>
-
+            
             <div class="hero-stats">
                 <div class="stat-card">
-                    <span class="stat-number">+10K</span>
+                    <span class="stat-number">10K+</span>
                     <span class="stat-label">عميل راضٍ</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">+50K</span>
+                    <span class="stat-number">50K+</span>
                     <span class="stat-label">طلب منجز</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">99%</span>
-                    <span class="stat-label">معدل الرضا</span>
+                    <span class="stat-label">نسبة النجاح</span>
                 </div>
             </div>
         </div>
@@ -953,10 +1014,10 @@
     <div class="container">
         <section class="section" id="services">
             <div class="section-header fade-in">
-                <span class="section-badge">خدماتنا المميزة</span>
-                <h2 class="section-title">ماذا نقدم لك؟</h2>
+                <span class="section-badge">الخدمات المتاحة</span>
+                <h2 class="section-title">خدماتنا الاحترافية</h2>
                 <p class="section-subtitle">
-                    مجموعة شاملة من الخدمات الاحترافية لتعزيز حضورك على منصات التواصل الاجتماعي
+                    نوفر مجموعة شاملة من الخدمات لتلبية جميع احتياجاتك في عالم السوشيال ميديا
                 </p>
             </div>
 
@@ -964,20 +1025,43 @@
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <div class="service-icon">
-                            <i class="fas fa-user-circle"></i>
+                            <i class="fab fa-instagram"></i>
                         </div>
                         <div class="service-title-group">
-                            <h3>بيع حسابات</h3>
-                            <p>حسابات موثوقة ومضمونة</p>
+                            <h3>بيع حسابات انستقرام</h3>
+                            <p>حسابات موثقة ونشطة</p>
                         </div>
                     </div>
                     <p class="service-description">
-                        حسابات جاهزة للاستخدام الفوري على جميع منصات التواصل الاجتماعي بجودة عالية وأسعار تنافسية
+                        حسابات انستقرام أصلية وموثقة بمتابعين حقيقيين، جاهزة للاستخدام الفوري مع ضمان كامل على الجودة
                     </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> حسابات مفعلة وآمنة 100%</li>
-                        <li><i class="fas fa-check-circle"></i> ضمان استرجاع المال</li>
-                        <li><i class="fas fa-check-circle"></i> توصيل فوري</li>
+                        <li><i class="fas fa-check-circle"></i> حسابات أصلية 100%</li>
+                        <li><i class="fas fa-check-circle"></i> متابعين نشطين وحقيقيين</li>
+                        <li><i class="fas fa-check-circle"></i> ضمان الاسترجاع لمدة شهر</li>
+                    </ul>
+                    <a href="#" class="service-link">
+                        اطلب الآن <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="service-title-group">
+                            <h3>بيع حسابات تيك توك</h3>
+                            <p>حسابات عالية الجودة</p>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        حسابات تيك توك مميزة بمتابعين حقيقيين ومشاهدات عالية، مثالية لبدء نشاطك التجاري
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> حسابات قديمة وموثوقة</li>
+                        <li><i class="fas fa-check-circle"></i> تفاعل حقيقي ومشاهدات مرتفعة</li>
+                        <li><i class="fas fa-check-circle"></i> ضمان الأمان الكامل</li>
                     </ul>
                     <a href="#" class="service-link">
                         اطلب الآن <i class="fas fa-arrow-left"></i>
@@ -991,16 +1075,16 @@
                         </div>
                         <div class="service-title-group">
                             <h3>رشق متابعين</h3>
-                            <p>زيادة طبيعية وآمنة</p>
+                            <p>متابعين حقيقيين ونشطين</p>
                         </div>
                     </div>
                     <p class="service-description">
-                        زيادة عدد المتابعين بطريقة آمنة وطبيعية مع ضمان عدم النقصان والحفاظ على جودة الحساب
+                        زيادة فورية في عدد المتابعين بجودة عالية وبأمان تام لجميع المنصات الاجتماعية
                     </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> متابعين حقيقيين ونشطين</li>
-                        <li><i class="fas fa-check-circle"></i> بدون الحاجة للباسورد</li>
-                        <li><i class="fas fa-check-circle"></i> ضمان عدم النقصان</li>
+                        <li><i class="fas fa-check-circle"></i> متابعين حقيقيين 100%</li>
+                        <li><i class="fas fa-check-circle"></i> توصيل فوري خلال دقائق</li>
+                        <li><i class="fas fa-check-circle"></i> لا يوجد خطر على الحساب</li>
                     </ul>
                     <a href="#" class="service-link">
                         اطلب الآن <i class="fas fa-arrow-left"></i>
@@ -1014,16 +1098,16 @@
                         </div>
                         <div class="service-title-group">
                             <h3>رشق مشاهدات</h3>
-                            <p>انتشار واسع للمحتوى</p>
+                            <p>مشاهدات عالية الجودة</p>
                         </div>
                     </div>
                     <p class="service-description">
-                        تعزيز مشاهدات الفيديوهات والقصص لزيادة انتشار محتواك وتحقيق أفضل النتائج
+                        زيادة مشاهدات الفيديوهات والقصص بسرعة فائقة وبجودة عالية لتحسين انتشار محتواك
                     </p>
                     <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> مشاهدات عالية الجودة</li>
-                        <li><i class="fas fa-check-circle"></i> تفاعل طبيعي ومستمر</li>
-                        <li><i class="fas fa-check-circle"></i> جميع المنصات متوفرة</li>
+                        <li><i class="fas fa-check-circle"></i> مشاهدات حقيقية ومتفاعلة</li>
+                        <li><i class="fas fa-check-circle"></i> سرعة في التنفيذ</li>
+                        <li><i class="fas fa-check-circle"></i> أسعار تنافسية جداً</li>
                     </ul>
                     <a href="#" class="service-link">
                         اطلب الآن <i class="fas fa-arrow-left"></i>
@@ -1037,16 +1121,16 @@
                         </div>
                         <div class="service-title-group">
                             <h3>زيادة التفاعل</h3>
-                            <p>لايكات وتعليقات</p>
+                            <p>لايكات وتعليقات حقيقية</p>
                         </div>
                     </div>
                     <p class="service-description">
-                        لايكات، تعليقات، ومشاركات حقيقية لتحسين تفاعل حسابك وزيادة مصداقيته
+                        تعزيز التفاعل على منشوراتك من خلال لايكات وتعليقات حقيقية تزيد من انتشار محتواك
                     </p>
                     <ul class="service-features">
                         <li><i class="fas fa-check-circle"></i> تفاعل حقيقي ومضمون</li>
-                        <li><i class="fas fa-check-circle"></i> نتائج فورية</li>
-                        <li><i class="fas fa-check-circle"></i> أسعار تنافسية جداً</li>
+                        <li><i class="fas fa-check-circle"></i> زيادة الوصول والانتشار</li>
+                        <li><i class="fas fa-check-circle"></i> تحسين ترتيب المنشورات</li>
                     </ul>
                     <a href="#" class="service-link">
                         اطلب الآن <i class="fas fa-arrow-left"></i>
@@ -1056,20 +1140,66 @@
                 <div class="service-card fade-in">
                     <div class="service-header">
                         <div class="service-icon">
-                            <i class="fas fa-certificate"></i>
+                            <i class="fas fa-check-circle"></i>
                         </div>
                         <div class="service-title-group">
                             <h3>توثيق الحسابات</h3>
-                            <p>العلامة الزرقاء</p>
+                            <p>العلامة الزرقاء الرسمية</p>
                         </div>
                     </div>
                     <p class="service-description">
-                        خدمات توثيق احترافية للحصول على العلامة الزرقاء وزيادة مصداقية حسابك
+                        احصل على العلامة الزرقاء للتوثيق وزد من مصداقيتك وثقة متابعيك بك
                     </p>
                     <ul class="service-features">
                         <li><i class="fas fa-check-circle"></i> توثيق رسمي معتمد</li>
-                        <li><i class="fas fa-check-circle"></i> إجراءات آمنة 100%</li>
-                        <li><i class="fas fa-check-circle"></i> دعم فني متواصل</li>
+                        <li><i class="fas fa-check-circle"></i> زيادة المصداقية والثقة</li>
+                        <li><i class="fas fa-check-circle"></i> دعم فني متخصص</li>
+                    </ul>
+                    <a href="#" class="service-link">
+                        اطلب الآن <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="service-title-group">
+                            <h3>خدمات يوتيوب</h3>
+                            <p>مشتركين ومشاهدات</p>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        زيادة المشتركين والمشاهدات لقناتك على يوتيوب بجودة عالية لتحقيق الربح والنجاح
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> مشتركين حقيقيين ونشطين</li>
+                        <li><i class="fas fa-check-circle"></i> مشاهدات آمنة ومضمونة</li>
+                        <li><i class="fas fa-check-circle"></i> تسريع تحقيق الدخل</li>
+                    </ul>
+                    <a href="#" class="service-link">
+                        اطلب الآن <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="service-title-group">
+                            <h3>خدمات تويتر X</h3>
+                            <p>متابعين وإعادة تغريد</p>
+                        </div>
+                    </div>
+                    <p class="service-description">
+                        تعزيز حضورك على تويتر X من خلال متابعين حقيقيين وتفاعل مستمر على تغريداتك
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> متابعين مستهدفين حسب المجال</li>
+                        <li><i class="fas fa-check-circle"></i> إعادة تغريد ومشاركات</li>
+                        <li><i class="fas fa-check-circle"></i> زيادة الانتشار والتأثير</li>
                     </ul>
                     <a href="#" class="service-link">
                         اطلب الآن <i class="fas fa-arrow-left"></i>
@@ -1154,9 +1284,9 @@
                         <i class="fab fa-telegram"></i>
                         تواصل عبر تيليجرام
                     </a>
-                    <a href="#" class="cta-btn cta-btn-outline">
+                    <a href="#services" class="cta-btn cta-btn-outline">
                         <i class="fas fa-shopping-cart"></i>
-                        اطلب استشارة مجانية
+                        تصفح الخدمات
                     </a>
                 </div>
             </div>
@@ -1249,13 +1379,43 @@
 
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    <p>&copy; 2024 <strong>Social Pro</strong> - جميع الحقوق محفوظة | تصميم احترافي بأسلوب تيليجرام</p>
+                    <p>&copy; 2026 <strong>Social Pro</strong> - جميع الحقوق محفوظة</p>
                 </div>
-                <div class="footer-payment">
-                    <i class="fab fa-cc-visa payment-icon"></i>
-                    <i class="fab fa-cc-mastercard payment-icon"></i>
-                    <i class="fab fa-cc-paypal payment-icon"></i>
-                    <i class="fab fa-bitcoin payment-icon"></i>
+                <div class="footer-payment-section">
+                    <h5 class="payment-title">طرق الدفع</h5>
+                    <div class="footer-payment">
+                    <div class="payment-method">
+                        <svg class="payment-logo" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="40" rx="5" fill="#FF6B00"/>
+                            <text x="50" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">زين كاش</text>
+                        </svg>
+                    </div>
+                    <div class="payment-method">
+                        <svg class="payment-logo" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="40" rx="5" fill="#1E3A8A"/>
+                            <text x="50" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">FIB</text>
+                        </svg>
+                    </div>
+                    <div class="payment-method">
+                        <svg class="payment-logo" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="40" rx="5" fill="#00A859"/>
+                            <text x="50" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">سوبر كي</text>
+                            <text x="50" y="32" font-family="Arial, sans-serif" font-size="9" fill="white" text-anchor="middle">Super Key</text>
+                        </svg>
+                    </div>
+                    <div class="payment-method">
+                        <svg class="payment-logo" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="asiaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#E31E24;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#B71C1C;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="100" height="40" rx="5" fill="url(#asiaGrad)"/>
+                            <text x="50" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">آسيا سيل</text>
+                        </svg>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -1292,6 +1452,18 @@
 
         fadeElements.forEach(element => {
             fadeObserver.observe(element);
+        });
+
+        // Add hover effect to service cards
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
         });
     </script>
 </body>
